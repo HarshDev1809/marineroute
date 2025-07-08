@@ -7,25 +7,28 @@ import { MdOutlineComputer } from "react-icons/md";
 import { BiTransferAlt } from "react-icons/bi";
 import { CiServer } from "react-icons/ci";
 
+import Image from 'next/image';
+
 function IntroSection() {
   return (
     <section className="relative h-[80vh] w-full">
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/img/world-map.png')" }}
-      ></div>
-
-      {/* Black overlay to dim the image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/img/world-map.png"
+          alt="World Map"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+      </div>
       <div className="absolute inset-0 bg-black opacity-50"></div>
-
-      {/* Content */}
+      {/* Rest of your content */}
       <div className="relative z-10 flex flex-col h-full items-center pt-40">
         <h1 className="text-black text-4xl font-bold">
           Welcome to MarineRoute
         </h1>
         <p>A free and open source solution for checking sea routes</p>
-        <div className=" flex flex-row items-center gap-2 w-1/2 pt-10">
+        <div className="flex flex-row items-center gap-2 w-1/2 pt-10">
           <Button
             type="link-btn"
             href="/documentation/npm-package"
